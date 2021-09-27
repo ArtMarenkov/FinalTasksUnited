@@ -37,6 +37,12 @@ public class CommonPage extends BasePage {
     @FindBy(css = "input[id='glpricefrom']") // //Путь к полю "Цена от"
     WebElement pricefrom; // цена от
 
+    @FindBy(xpath = "//input[@name = 'Поле поиска']")
+    WebElement searchField;
+
+    @FindBy(xpath = "(//button[text() = 'Показать всё'])[1]")
+    // путь к кнопке "Показать все" в разделе Производитель
+    public WebElement showAllBrands;
 
     private String brand = "//div/span[text() = '%s']"; //Путь к полю производитель
 
@@ -62,6 +68,17 @@ public class CommonPage extends BasePage {
 
     public void setFilter(String price) {
         pricefrom.sendKeys(price);
+    }
+
+    public void setShowAllBrands() {
+        if (showAllBrands.isDisplayed()){
+            showAllBrands.click();
+        }
+    }
+
+    public void searchField(String brandName) {
+        searchField.clear();
+        searchField.sendKeys(brandName);
     }
 
     public String getActualFirstElementName() {

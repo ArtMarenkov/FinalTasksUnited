@@ -41,6 +41,9 @@ public class CommonSteps extends BaseSteps {
 
     @Step
     public void brandChoose(String brandName) {
+        commonPage.setShowAllBrands();
+        commonPage.searchField(brandName);
         commonPage.brandClick(brandName);
+
     }
 }

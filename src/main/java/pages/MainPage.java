@@ -15,7 +15,8 @@ public class MainPage extends BasePage {
     }
 
     public void selectMarketMenu() {
-        mainMenu.findElement(By.xpath("//div[@class = 'services-new__icon services-new__promo-icon-default']")).click();  // Нажатие на "Маркет"
+        mainMenu.findElement(By.xpath("//a[@data-statlog = 'services_new.item.market.0']")).click();  // Нажатие на "Маркет"
+        //mainMenu.findElement(By.xpath("//div[@class = 'services-new__icon services-new__promo-icon-default']")).click();  // Нажатие на "Маркет"
     }
 
 }
